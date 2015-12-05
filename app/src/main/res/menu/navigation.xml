@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/item_navigation_drawer_inbox"
+            android:checked="true"
+            android:icon="@drawable/ic_launcher"
+            android:title="Loại Sản phẩm" />
+        <item
+            android:id="@+id/item_navigation_drawer_starred"
+            android:icon="@drawable/ic_launcher"
+            android:title="Starred" />
+        <item
+            android:id="@+id/item_navigation_drawer_sent_mail"
+            android:icon="@drawable/ic_launcher"
+            android:title="Sent mail" />
+        <item
+            android:id="@+id/item_navigation_drawer_drafts"
+            android:icon="@drawable/ic_launcher"
+            android:title="Drafts" />
+    </group>
+
+    <item android:title="Subheader">
+        <menu>
+            <item
+                android:id="@+id/item_navigation_drawer_settings"
+                android:icon="@drawable/ic_launcher"
+                android:title="Settings" />
+            <item
+                android:id="@+id/item_navigation_drawer_help_and_feedback"
+                android:icon="@drawable/ic_launcher"
+                android:title="Help and feedback" />
+        </menu>
+    </item>
+
+</menu>

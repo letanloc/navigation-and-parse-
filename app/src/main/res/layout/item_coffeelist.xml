@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imageView2"
+            android:layout_marginLeft="8dp"
+            android:layout_toEndOf="@+id/imageView2"
+            android:layout_toRightOf="@+id/imageView2"
+            android:lines="1"
+            android:padding="4dp"
+            android:textColor="#000"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/txtTitle"
+            android:layout_marginRight="8dp"
+            android:padding="10dp"
+            android:src="@drawable/ic_content_duplicate_black_36dp" />
+
+        <TextView
+            android:id="@+id/txtContent"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/txtTitle"
+            android:layout_alignStart="@+id/txtTitle"
+            android:layout_below="@+id/txtTitle"
+            android:lines="1"
+            android:padding="4dp"
+            android:text="22+6"
+            android:textColor="#ccc"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/txtPrice"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/txtContent"
+            android:layout_alignStart="@+id/txtContent"
+            android:layout_below="@+id/txtContent"
+            android:lines="1"
+            android:padding="4dp"
+            android:textColor="@color/primary"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <View
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:layout_marginLeft="64dp"
+    android:background="#CCC" />
+</LinearLayout>

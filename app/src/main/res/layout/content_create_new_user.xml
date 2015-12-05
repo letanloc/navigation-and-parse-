@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.loc.coffemanager.CreateNewUser"
+    tools:showIn="@layout/activity_create_new_user">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_view"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="22sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="40dp"
+                    android:background="#fff"
+                    android:elevation="4dp"
+                    card_view:cardBackgroundColor="#FFF"
+                    card_view:cardCornerRadius="7dp"
+                    card_view:cardElevation="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#FFF"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgUser"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="16dp"
+                            android:layout_marginTop="16dp"
+                            android:src="@drawable/userdefault" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/edtUsername"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="Tên đăng nhập"
+                            android:lines="1"
+                            app:met_clearButton="true"
+                            app:met_floatingLabel="highlight"
+                            app:met_primaryColor="?colorAccent" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/edtPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="Mật khẩu"
+                            android:lines="1"
+                            app:met_clearButton="true"
+                        android:inputType="textPassword"
+                            app:met_floatingLabel="highlight"
+                            app:met_primaryColor="?colorAccent" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/edtRetypepassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="Nhập lại mật khẩu"
+                            android:inputType="textPassword"
+                            android:lines="1"
+                            app:met_clearButton="true"
+                            app:met_floatingLabel="highlight"
+                            app:met_primaryColor="?colorAccent" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/edtFirstname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="Tên của bạn"
+                            android:lines="1"
+                            app:met_clearButton="true"
+                            app:met_floatingLabel="highlight"
+                            app:met_primaryColor="?colorAccent" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/edtLastname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="Họ của bạn"
+                            android:lines="1"
+                            app:met_clearButton="true"
+                            app:met_floatingLabel="highlight"
+                            app:met_primaryColor="?colorAccent" />
+
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+
+                            <RadioButton
+                                android:id="@+id/raNam"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="22dp"
+                                android:checked="true"
+                                android:text="Nam" />
+
+                            <RadioButton
+                                android:id="@+id/raNu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="nữ" />
+                        </RadioGroup>
+
+                        <com.weiwangcn.betterspinner.library.BetterSpinner
+                            android:id="@+id/spCyti"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/activity_vertical_margin"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="Chọn thành phố" />
+
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/edtEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="Email"
+                            android:lines="1"
+                            app:met_clearButton="true"
+                            app:met_floatingLabel="highlight"
+                            app:met_primaryColor="?colorAccent" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/edtAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="Địa chỉ"
+                            app:met_floatingLabel="highlight"
+                            app:met_primaryColor="?colorAccent" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/edtPhone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:hint="Số điện thoại"
+                            android:lines="1"
+                            android:inputType="number"
+                            app:met_clearButton="true"
+                            app:met_floatingLabel="highlight"
+                            app:met_primaryColor="?colorAccent" />
+
+                        <Button
+                            android:id="@+id/btnDangKy"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@color/primary"
+                            android:text="Đăng ký"
+                            android:textColor="#FFF" />
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+
+        <ProgressBar
+            android:id="@+id/progressBar3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="false" />
+
+    </FrameLayout>
+
+
+</LinearLayout>
