@@ -2,6 +2,7 @@ package com.loc.coffemanager;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ import com.loc.coffemanager.Object.UserDetails;
 import com.loc.coffemanager.Until.CircleTransform;
 import com.loc.coffemanager.User.UserObject;
 import com.parse.FindCallback;
+import com.parse.GetDataCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -41,6 +43,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.FutureTask;
 
 import butterknife.Bind;
@@ -90,7 +93,7 @@ public class CreateNewUser extends AppCompatActivity implements View.OnClickList
         ButterKnife.bind(this);
         progressBar.setVisibility(View.GONE);
         layout.setVisibility(View.VISIBLE);
-        SetSpinner();
+//        SetSpinner();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setTitle("Đăng ký");
@@ -111,7 +114,59 @@ public class CreateNewUser extends AppCompatActivity implements View.OnClickList
     }
 
 
-    @Override
+    public void getAvatar() {
+//         ParseQuery<>//
+        ParseQuery query = new ParseQuery("UserDetailts");
+//         query.getInBackground()
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+
+
+//                for (ParseObject object : objects) {
+                    ParseFile fileObject = objects.get(0).getParseFile("Avatar");
+                        if(fileObject!=null){
+                            fileObject.getDataInBackground(new GetDataCallback() {
+                                @Override
+                                public void done(byte[] data, ParseException e) {
+                                    Log.e("Sâsas",data.toString()+"");
+                                    Bitmap bmp = BitmapFactory
+                                            .decodeByteArray(
+                                                    data, 0,
+                                                    data.length);
+
+                                    // Get the ImageView from
+                                    // main.xml
+//                            ImageView image = (ImageView) findViewById(R.id.image);
+
+                                    // Set the Bitmap into the
+//                             ImageView
+                                    img.setImageBitmap(bmp);
+//
+
+                                }
+                            });
+
+
+
+                        }
+
+
+
+//                            .get("ImageFile");
+                }
+
+
+//            }
+        });
+
+
+    }
+
+
+
+
+//    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -194,7 +249,7 @@ public class CreateNewUser extends AppCompatActivity implements View.OnClickList
                     public void done(List<ParseObject> objects, ParseException e) {
                         progressBar.setVisibility(View.VISIBLE);
                         layout.setVisibility(View.INVISIBLE);
-
+//
                         if (e == null) {
                             Log.e("SSSS", "gssasaas");
                             myuserId = objects.size() + 1;
